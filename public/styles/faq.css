@@ -1,0 +1,14 @@
+.faq-info {
+  display: none;
+}
+
+.bablot-faq-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.bablot-faq-form input {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 200px;
+}

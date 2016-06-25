@@ -16,6 +16,12 @@
   height: 48px;
 }
 
+.bablot-nav .logo a {
+  text-decoration: none;
+  margin-left: 10px;
+  color: #494B61;
+}
+
 .bablot-nav .bablot-nav--menu {
   height: 100%;
   display: flex;
