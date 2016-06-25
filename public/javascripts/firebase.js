@@ -15,7 +15,9 @@ function showLogin() {
     var user = result.user;
 
     document.querySelector('.login-page').style.display = 'none';
-    document.querySelector('.faq-info').style.display = 'block';
+    getFaqs().then(() => {
+      document.querySelector('.faq-info').style.display = 'block';
+    });
 
   }).catch(function(error) {
     var errorCode = error.code;

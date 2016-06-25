@@ -22,10 +22,15 @@ var onSumbitFaq = (e) => {
   postFaqs(faqs);
 };
 
-var postFaqs = (faqs) => {
-
+var getFaqs = (faqs) => {
   let user = firebase.auth().currentUser;
-  console.log(user);
+  return firebase.database().ref('users/' + user.displayName + '@' + user.uid).once('value')
+    .then((showcase)=> {
+      console.log(showcase.val());
+    });
+}
+
+var postFaqs = (faqs) => {
+  let user = firebase.auth().currentUser;
   firebase.database().ref('users/' + user.displayName + '@' + user.uid).set(faqs);
-  return console.log(user);
 }
