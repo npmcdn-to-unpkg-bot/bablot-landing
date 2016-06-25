@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  body
+    header
+      nav.bablot-nav
+        .logo
+          img(src='assets/king3.svg')
+          |         Bablot
+        .bablot-nav--menu
+          ul
+            li
+              a(href='#', onclick="go('contact')") Contact
+            li
+              a(href='#', onclick="go('about')") About
+            li
+              a(href='#', onclick="go('chat')") Chat
+    .bablot-intro
+      img(src='assets/crown.svg')
+      .bablot-intro--mesage A chat bot that will find your next home
+    .bablot-wrapper
+      .bablot-chat-panel
+        .bablot-chat
+          .bablot-chat--header
+            .bablot-chat--status
+              #nickname online
+          .bablot-chat--messages
+            // Messages injected here, do not edit
+          .bablot-chat--input
+            form.bablot-chat--input-form
+              input#bablot-chat-input-field(autocomplete='off', type='text', placeholder='Type your message ...')
+            .bablot-chat--send
+              button
+                img(src='assets/plane.svg')
+      .bablot-about-panel
+        .bablot-about
+          .bablot-about--header Rent It Easy
+          .bablot-about--message
+            p Bablot is a chat bot that helps you find a place to live.
+            p
+              | It uses artificial intelligence to get you personalized results
+              | quickly and easily.
+            p If you have any questions about finding a place, just ask Sir Bablot!
+      .bablot-contact-panel
+        .bablot-contact
+          .bablot-contact--header We don't bite
+          .bablot-contact--phone
+            img(src='assets/phone.svg')
+            a(href='tel:226-378-8121') 226 378 8121
+          .bablot-contact--email
+            img(src='assets/email.svg')
+            a(href='mailto:yourfriends@bablot.co?Subject=Hello!') yourfriends@bablot.co
+    footer.bablot-footer

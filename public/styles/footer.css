@@ -1,0 +1,19 @@
+.bablot-footer {
+  background: #31DCFF;
+  height: 30px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.bablot-footer::after {
+  content: '';
+  background: #31DCFF;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 17px);
+  transform: rotate(45deg);
+  border-radius: 6px;
+}
