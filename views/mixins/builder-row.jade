@@ -1,7 +1,6 @@
 mixin builder-row(row_id)
   .builder-row
     .builder-row-col-left
-      button(onclick="toggleCard(#{row_id})") show/hide #{row_id}
       input
     .builder-row-col-middle
       select(onchange="changeTemplateType(this)" onfocus="cacheTemplate(this)")

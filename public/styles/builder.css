@@ -28,16 +28,12 @@
   width: 50%;
 }
 
-.builder-row h5 {
-  margin-top: 2px;
-}
 .builder-row button:hover {
   cursor: pointer;
-  color: blue;
+  color: green;
 }
 
 .builder-row button {
-  height: 20px;
   background: none;
   border: none;
   font-size: 16px;
@@ -58,5 +54,14 @@
   margin-left: 20px;
   margin-right: 20px;
   width: 300px;
-  display: none;
+}
+
+.save-changes-button {
+  background: green;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  margin: 20px;
 }
