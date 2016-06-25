@@ -1,0 +1,21 @@
+mixin builder-row(row_id)
+  .builder-row
+    .builder-row-col-left
+      button(onclick="toggleCard(#{row_id})") show/hide #{row_id}
+      input
+    .builder-row-col-middle
+      select(onchange="changeTemplateType(this)" onfocus="cacheTemplate(this)")
+        option(value='text') text
+        option(value='image') image
+    .builder-row-col-right
+      .card(id="card_#{row_id}")
+        .bablot-messenger-text(contenteditable="true")
+          | This is a sample message. Put whatever lubrication you want
+          | wherever it feels comfortable!
+        .bablot-messenger-image
+          .wrapper
+            img(id="previewImage_#{row_id}", width="250px" src="http://puu.sh/pFPLm/f5b591e509.png")
+          .url-bar
+            p URL:
+            input(id="imageUrl_#{row_id}" value="http://puu.sh/pFPLm/f5b591e509.png")
+            button(onclick="updateImage(#{row_id})") update

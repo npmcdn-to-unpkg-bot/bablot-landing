@@ -1,0 +1,15 @@
+extends layout
+include mixins/builder-row
+
+block content
+  body
+    header
+      include ./nav.jade
+
+    .builder
+      h5 Questions | Answers
+      each val, index in new Array(5)
+        +builder-row(index)
+
+    script(src="javascripts/builderRow.js")
+    script(src="javascripts/builder.js")

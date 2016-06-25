@@ -11,4 +11,9 @@ router.get('/faq', function(req, res, next) {
   res.render('faq', { title: 'Bablot - FAQ' });
 });
 
+/* GET Builder page. */
+router.get('/builder', function(req, res, next) {
+  res.render('builder');
+});
+
 module.exports = router;
