@@ -26,12 +26,14 @@ var getFaqs = (faqs) => {
   let user = firebase.auth().currentUser;
   return firebase.database().ref('users/' + user.displayName + '@' + user.uid).once('value')
     .then((showcase)=> {
-      showcase.val().forEach((faq) => {
-        let questionInput = document.querySelector(`input[name="faq_question${faq.index}"]`);
-        let answerInput = document.querySelector(`input[name="faq_answer${faq.index}"]`);
-        questionInput.value = faq.question;
-        answerInput.value = faq.answer;
-      })
+      if (showcase.val()) {
+        showcase.val().forEach((faq) => {
+          let questionInput = document.querySelector(`input[name="faq_question${faq.index}"]`);
+          let answerInput = document.querySelector(`input[name="faq_answer${faq.index}"]`);
+          questionInput.value = faq.question;
+          answerInput.value = faq.answer;
+        })
+      }
     });
 }
 
