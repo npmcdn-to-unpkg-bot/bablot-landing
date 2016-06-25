@@ -1,7 +1,7 @@
 mixin builder-row(row_id)
-  .builder-row
+  .builder-row(id="builder_row_#{row_id}")
     .builder-row-col-left
-      input
+      input.questionInput
     .builder-row-col-middle
       select(onchange="changeTemplateType(this)" onfocus="cacheTemplate(this)")
         option(value='text') text

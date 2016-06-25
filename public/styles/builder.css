@@ -1,3 +1,7 @@
+.builder {
+  display: none;
+}
+
 .builder-row {
   display: flex;
   flex-direction: row;

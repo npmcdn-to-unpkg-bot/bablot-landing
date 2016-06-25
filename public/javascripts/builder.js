@@ -1,24 +1,46 @@
-var previousSelect;
+var onSumbitFaq = () => {
 
-var imageTemplate = `
-  <div class="bablot-messenger-image">
-    <img width="250px" src="http://puu.sh/pFPLm/f5b591e509.png"/>
-  </div>`;
+  let faqPairs = document.querySelectorAll('.builder .builder-row');
+  let faqs = [];
 
-var textTemplate = `
-  <div class="bablot-messenger-text" contenteditable="true">
-    Text
-  </div>`;
+  // Format the form data in a nicer way for our API
+  faqPairs.forEach((faqPair, i) => {
+    let select = faqPair.querySelector('select');
+    let currentSelection = select.options[select.selectedIndex].value;
+    let question = faqPair.querySelector('.questionInput').value;
+    let sim = faqPair.querySelector(`.bablot-messenger-${currentSelection}`)
+    let response =  parseSim(sim, currentSelection);
 
-function changeTemplateType(el) {
-  let currentSelect = el.options[el.selectedIndex].value;
-  let previousCard = document.querySelector('.bablot-messenger-' + previousSelect);
-  let currentCard = document.querySelector('.bablot-messenger-' + currentSelect);
-  previousCard.style.display = 'none';
-  currentCard.style.display = 'block';
-  el.blur();
+    faqs.push({
+      question,
+      answer: {
+        type: currentSelection,
+        response
+      },
+      index: i + 1
+    });
+  });
+
+  postFaqs(faqs);
+};
+
+var getFaqs = (faqs) => {
+  let user = firebase.auth().currentUser;
+  return firebase.database().ref('users/' + user.displayName + '@' + user.uid).once('value')
+    .then((showcase)=> {
+      if (showcase.val()) {
+        showcase.val().forEach((faq) => {
+          let builderRow = document.querySelector(`#builder_row_${faq.index}`);
+          let questionInput = builderRow.querySelector('.questionInput');
+          questionInput.value = faq.question;
+          setAnswer(builderRow, faq.answer);
+        });
+      }
+      document.querySelector('.builder').style.display = 'block';
+    });
 }
 
-function cacheTemplate(el) {
-  previousSelect = el.options[el.selectedIndex].value;
+var postFaqs = (faqs) => {
+  let user = firebase.auth().currentUser;
+  firebase.database().ref('users/' + user.displayName + '@' + user.uid).set(faqs);
 }
