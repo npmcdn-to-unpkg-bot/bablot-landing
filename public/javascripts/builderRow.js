@@ -1,7 +1,8 @@
-function changeTemplateType(el) {
+function changeTemplateType(el, rowId) {
   let currentSelect = el.options[el.selectedIndex].value;
-  let previousCard = document.querySelector('.bablot-messenger-' + previousSelect);
-  let currentCard = document.querySelector('.bablot-messenger-' + currentSelect);
+  let builderRow = document.querySelector(`#builder_row_${rowId}`);
+  let previousCard = builderRow.querySelector('.bablot-messenger-' + previousSelect);
+  let currentCard = builderRow.querySelector('.bablot-messenger-' + currentSelect);
   previousCard.style.display = 'none';
   currentCard.style.display = 'block';
   el.blur();
@@ -11,6 +12,26 @@ function cacheTemplate(el) {
   previousSelect = el.options[el.selectedIndex].value;
 }
 
+function removeRow(rowId) {
+  let user = firebase.auth().currentUser;
+  let builderRow = document.querySelector(`#builder_row_${rowId}`);
+  builderRow.remove();
+  gatherFaqs((faqs) => {
+    firebase.database().ref('users/' + user.displayName + '@' + user.uid).set(faqs);
+  });
+}
+
+function addNewBuilderRow() {
+  gatherFaqs((faqs) => {
+    if (faqs.length < 15) {
+      let builder = document.querySelector(`.builder`);
+      let builderRow = builderRowTemplate(faqs.length);
+      builder.appendChild(builderRow);
+    } else {
+      alert('Maximum FAQs reached!')
+    }
+  });
+}
 
 function updateImage(rowId) {
   let url = document.querySelector(`#imageUrl_${rowId}`).value;
