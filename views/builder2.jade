@@ -6,13 +6,12 @@ block content
     header
       include ./nav.jade
 
-    include ./login.jade
+    //- include ./login.jade
     .builder-page
-      .builder
-        h5 Questions | Answers
-      button.save-changes-button(id="new_row_button" onclick="addNewBuilderRow()") New
-      button.save-changes-button(onclick="gatherFaqs(postFaqs)") Save Changes
-
+      .builder#builder
+      //- button.save-changes-button(id="new_row_button" onclick="addNewBuilderRow()") New
+      //- button.save-changes-button(onclick="gatherFaqs(postFaqs)") Save Changes
+    script(src='dummyData.js')
     script(src='https://npmcdn.com/vue@1.0.25/dist/vue.min.js')
     script(src='https://www.gstatic.com/firebasejs/3.0.5/firebase.js')
     script(src='https://www.gstatic.com/firebasejs/3.0.5/firebase-app.js')
@@ -21,4 +20,9 @@ block content
     script(src='javascripts/firebase.js')
     script(src="javascripts/builderRowTemplate.js")
     script(src="javascripts/builderRow.js")
+    script(src="components/textCard.js")
+    script(src="components/imageCard.js")
+    script(src="components/cardSelect.js")
+    script(src="components/builderRow.js")
+    script(src="components/builder.js")
     script(src="javascripts/builder.js")
