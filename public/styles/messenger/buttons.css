@@ -1,0 +1,35 @@
+.bablot-messenger-buttons {
+  display: none;
+}
+
+.bablot-messenger-buttons button {
+  border: solid 1px #f1f0f0;
+  width: 100%;
+}
+
+.bablot-messenger-buttons button:hover {
+  color: #327EFA;
+}
+
+.bablot-messenger-buttons button::after {
+  content: '>';
+  position: relative;
+  left: 100px;
+}
+
+.common-width {
+  display: inline-block;
+  min-width: 150px;
+}
+
+.bablot-messenger-buttons .message-text {
+  display: block;
+  border-radius: 10px 10px 0px 0px;
+  background: #f1f0f0;
+  padding: 10px;
+  max-width: 300px;
+  min-width: 250px;
+  text-align: left;
+  display: inline-block;
+  margin: auto;
+}

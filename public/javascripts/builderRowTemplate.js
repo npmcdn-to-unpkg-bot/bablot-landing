@@ -9,6 +9,7 @@ function builderRowTemplate(rowId){
         <select onchange="changeTemplateType(this, ${rowId})" onfocus="cacheTemplate(this)">
           <option value="text">text</option>
           <option value="image">image</option>
+          <option value="buttons">buttons</option>
         </select>
       </div>
       <div class="builder-row-col-right">
@@ -23,6 +24,14 @@ function builderRowTemplate(rowId){
               <p>URL:</p>
               <input id="imageUrl_${rowId}" value="http://puu.sh/pFPLm/f5b591e509.png"/>
               <button onclick="updateImage(${rowId})">update</button>
+            </div>
+          </div>
+          <div class="bablot-messenger-buttons">
+            <div class="common-width">
+              <div contenteditable="true" class="message-text">Sample Message</div>
+              <div class="button-column">
+                <button contenteditable="true">Some button</button>
+              </div>
             </div>
           </div>
         </div>
