@@ -2,7 +2,6 @@ function builderRowTemplate(rowId){
   let template = `
     <div id="builder_row_${rowId}" class="builder-row">
       <div class="builder-row-col-left">
-        ${rowId + 1}
         <button onclick="removeRow(${rowId})" class="delete-button">delete</button>
         <input class="questionInput"/>
       </div>
