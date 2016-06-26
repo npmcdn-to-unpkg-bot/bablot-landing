@@ -1,14 +1,18 @@
-var onSumbitFaq = () => {
+/**
+ * Gathers all FAQs currently on the page, and provides them to the callback
+ * @param  {Function} cb callback called with array of FAQs
+ */
+var gatherFaqs = (cb) => {
 
-  let faqPairs = document.querySelectorAll('.builder .builder-row');
+  let builderRows = document.querySelectorAll('.builder .builder-row');
   let faqs = [];
-
+  console.log(builderRows);
   // Format the form data in a nicer way for our API
-  faqPairs.forEach((faqPair, i) => {
-    let select = faqPair.querySelector('select');
+  builderRows.forEach((builderRow, i) => {
+    let select = builderRow.querySelector('select');
     let currentSelection = select.options[select.selectedIndex].value;
-    let question = faqPair.querySelector('.questionInput').value;
-    let sim = faqPair.querySelector(`.bablot-messenger-${currentSelection}`)
+    let question = builderRow.querySelector('.questionInput').value;
+    let sim = builderRow.querySelector(`.bablot-messenger-${currentSelection}`)
     let response =  parseSim(sim, currentSelection);
 
     faqs.push({
@@ -17,26 +21,32 @@ var onSumbitFaq = () => {
         type: currentSelection,
         response
       },
-      index: i + 1
+      index: i
     });
   });
 
-  postFaqs(faqs);
+  cb(faqs);
 };
 
 var getFaqs = (faqs) => {
+  window.visibleRowNumber = 0;
   let user = firebase.auth().currentUser;
   return firebase.database().ref('users/' + user.displayName + '@' + user.uid).once('value')
     .then((showcase)=> {
       if (showcase.val()) {
+        window.visibleRowNumber = showcase.val().length;
         showcase.val().forEach((faq) => {
-          let builderRow = document.querySelector(`#builder_row_${faq.index}`);
+          let builder = document.querySelector(`.builder`);
+          let builderRow = builderRowTemplate(faq.index);
           let questionInput = builderRow.querySelector('.questionInput');
+
+          builder.appendChild(builderRow);
           questionInput.value = faq.question;
           setAnswer(builderRow, faq.answer);
+          builderRow.style.display = "flex";
         });
       }
-      document.querySelector('.builder').style.display = 'block';
+      document.querySelector('.builder-page').style.display = 'block';
     });
 }
 

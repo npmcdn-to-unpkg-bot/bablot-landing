@@ -1,4 +1,4 @@
-.builder {
+.builder-page {
   display: none;
 }
 
@@ -9,6 +9,15 @@
   margin: auto;
   margin-top: 40px;
   width: 80%;
+}
+
+.builder-row .delete-button {
+  margin-top: 0px;
+  height: 20px;
+}
+
+.builder-row .delete-button:hover {
+  color: red;
 }
 
 @media (max-width: 700px) {

@@ -1,9 +1,11 @@
 mixin builder-row(row_id)
   .builder-row(id="builder_row_#{row_id}")
     .builder-row-col-left
+      #{row_id}
+      button.delete-button(onclick="removeRow(#{row_id})") delete
       input.questionInput
     .builder-row-col-middle
-      select(onchange="changeTemplateType(this)" onfocus="cacheTemplate(this)")
+      select(onchange="changeTemplateType(this, #{row_id})" onfocus="cacheTemplate(this)")
         option(value='text') text
         option(value='image') image
     .builder-row-col-right
