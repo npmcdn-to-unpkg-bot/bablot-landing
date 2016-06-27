@@ -1,14 +1,14 @@
 var imageCard = Vue.extend({
-  props: ['rowId'],
+  props: ['rowId', 'content'],
   template: `
     <div class="bablot-messenger-image">
-      <div class="wrapper"><img id="previewImage_{{rowId}}" width="250px" src="http://puu.sh/pFPLm/f5b591e509.png"/></div>
+      <div class="wrapper"><img id="previewImage_{{rowId}}" width="250px" v-bind:src="content.attachment.payload.url"/></div>
       <div class="url-bar">
         <p>URL:</p>
-        <input id="imageUrl_{{rowId}}" value="http://puu.sh/pFPLm/f5b591e509.png"/>
-        <button onclick="updateImage({{rowId}})">update</button>
+        <input id="imageUrl_{{rowId}}" v-model="content.attachment.payload.url"/>
       </div>
-    </div>`
+    </div>
+  `
 });
 
 Vue.component('image-card', imageCard);
