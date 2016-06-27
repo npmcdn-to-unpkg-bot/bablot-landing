@@ -13,7 +13,7 @@ router.get('/faq', function(req, res, next) {
 
 /* GET Builder page. */
 router.get('/builder', function(req, res, next) {
-  res.render('builder2');
+  res.render('builder');
 });
 
 module.exports = router;
