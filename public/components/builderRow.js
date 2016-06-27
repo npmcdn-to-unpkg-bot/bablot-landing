@@ -44,7 +44,9 @@ var BuilderRow = Vue.extend({
     changeTemplate: function(state) {
       this.$set('templateType', state.currentValue);
     },
-    delete: function() {},
+    delete: function() {
+      this.$dispatch('delete-row', this.faq);
+    },
     serialize: function() {
       let responses = this.responses[this.templateType];
       return responses;
