@@ -1,7 +1,3 @@
-.bablot-messenger-image {
-  display: none;
-}
-
 .bablot-messenger-image .url-bar {
   display: flex;
   flex-direction: row;
@@ -21,4 +17,5 @@
 
 .bablot-messenger-image img {
   max-width: 302px;
+  height: 250px;
 }

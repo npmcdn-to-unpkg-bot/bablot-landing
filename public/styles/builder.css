@@ -1,49 +1,45 @@
-.builder-page {
-  display: none;
-}
-
 .builder-row {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: auto;
   margin-top: 40px;
+  padding-top: 40px;
   width: 80%;
-}
-
-.builder-row .delete-button {
-  margin-top: 0px;
-  height: 20px;
-}
-
-.builder-row .delete-button:hover {
-  color: red;
+  border-top: solid 1px grey;
 }
 
 @media (max-width: 700px) {
   .builder-row {
     width: 100%;
+    flex-direction: column;
   }
 }
 
 .builder-row .builder-row-col-left {
-  width: 40%;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.builder-row .builder-row-col-middle {
-  width: 10%;
+  flex-direction: column;
+  padding-top: 20px;
+  width: 50%;
 }
 
 .builder-row .builder-row-col-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   width: 50%;
+  padding-top: 20px;
+}
+
+.builder-row .card {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 300px;
 }
 
 .builder-row button:hover {
   cursor: pointer;
-  color: green;
+  color: #A4EC4C;
 }
 
 .builder-row button {
@@ -52,21 +48,29 @@
   font-size: 16px;
 }
 
-.builder-row input {
-  margin-left: 20px;
-  margin-right: 20px;
+.builder-row .delete-button {
+  margin: auto;
+  margin-top: 20px;
   height: 20px;
+  width: 40px;
+}
+
+.builder-row .delete-button:hover {
+  color: red;
+}
+
+.builder-row input {
+  margin-left: auto;
+  margin-right: auto;
+  height: 20px;
+  width: 50%;
 }
 
 .builder-row select {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.builder-row .card {
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 20px;
 }
 
 .save-changes-button {
