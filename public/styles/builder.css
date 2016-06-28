@@ -59,10 +59,10 @@
   color: red;
 }
 
-.builder-row input {
+.builder-row .questionInput {
   margin-left: auto;
   margin-right: auto;
-  height: 20px;
+  resize: none!important;
   width: 50%;
 }
 

@@ -3,7 +3,13 @@ var BuilderRow = Vue.extend({
   template: `
   <div id="builder_row_{{rowId}}" class="builder-row">
       <div class="builder-row-col-left">
-        <input class="questionInput" v-model="faq.question" />
+        <textarea
+          class="questionInput"
+          v-model="faq.question"
+          cols="20"
+          rows="3">
+        </textarea>
+
         <card-select
           v-on:selection-changed="changeTemplate"
           :default="faq.type" >
