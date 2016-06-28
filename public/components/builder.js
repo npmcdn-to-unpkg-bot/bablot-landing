@@ -27,7 +27,7 @@ var builder = new Vue({
     </div>
   `,
   data: {
-    devMode: false,
+    devMode: true,
     faqs: [],
     currentUser: firebase.auth().currentUser
   },
@@ -39,16 +39,16 @@ var builder = new Vue({
           if (showcase.val()) {
             let faqs = showcase.val();
             for (var key in faqs) {
-              console.log(faqs[key]);
               this.faqs.push(faqs[key]);
             }
           }
         });
     },
     addRow: function () {
+      let rand = Math.floor(Math.random() * 36);
       if (this.faqs.length < 15) {
         this.faqs.push({
-          question: 'what is a dog like?',
+          question: window.sillyQuestions[rand],
           type: 'text',
           answer: { text: 'MOstly wet..' }
         });
@@ -65,7 +65,9 @@ var builder = new Vue({
 
       this.$children.forEach( (builderRow) => {
         let serial = builderRow.serialize();
-        let key = builderRow.faq.question.toLowerCase().replace (/ /g, '_')
+        console.log(JSON.stringify(serial));
+        let key = builderRow.faq.question.toLowerCase().replace (/ /g, '_');
+        console.log(key);
         facebookFormatData[key] = serial;
       });
 
