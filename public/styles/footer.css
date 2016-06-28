@@ -4,6 +4,7 @@
   position: fixed;
   bottom: 0px;
   width: 100%;
+  display: none;
 }
 
 .bablot-footer::after {
