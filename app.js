@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.get('/.well-known/acme-challenge/7BSAhYIqW23-E1qVesQlvRVjbAIxdjZZrsLna-be1RE', (req, res) => {
-  res.send('7BSAhYIqW23-E1qVesQlvRVjbAIxdjZZrsLna-be1RE.IP9Vd2bUb-AMw7Qn_4DEG9uIoKo_3ggtrZA1iJwDH7g');
+  res.send('OkKRWTArdlkrbJvAIjEbq0ul4_Nk2QJKJ6Edmagj_o4.IP9Vd2bUb-AMw7Qn_4DEG9uIoKo_3ggtrZA1iJwDH7g');
 });
 
 // catch 404 and forward to error handler
