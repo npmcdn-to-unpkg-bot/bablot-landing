@@ -4,6 +4,7 @@ var cardSelect = Vue.extend({
     <select v-model="selected" >
       <option value="text" selected>Text</option>
       <option value="image">Image</option>
+      <option value="button">Button</option>
     </select>
   `,
   activate: function(done) {

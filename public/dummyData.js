@@ -17,29 +17,33 @@ window.dummyData = [
         }
       }
     }
-  }
-  // {
-  //  "attachment": {
-  //     "type": "template",
-  //     "payload": {
-  //       "template_type": "button",
-  //       "text": "Call and schedule a Virtual Reality tour at our office. We try our best to give our current tenants 24 hours notice for viewings, so be proactive and call ahead of the day you plan to make an appointment!",
-  //       "buttons": [
-  //         {
-  //           "type":"web_url",
-  //           "title":"Call",
+  },
+  {
+    type: 'button',
+    question: 'why',
+    answer: {
+     "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "button",
+          "text": "Call and schedule a Virtual Reality tour at our office.",
+          "buttons": [
+            {
+              "type":"web_url",
+              "title":"Call",
 
-  //           "url":"https://www.facebook.com/l.php?u=tel%3A5555555555&h=sAQHTr9Ou"
-  //         },
-  //         {
-  //           "type":"web_url",
-  //           "title": "Map",
-  //           "url":"https://goo.gl/IJEilT"
-  //         }
-  //       ]
-  //     }
-  //   }
-  // },
+              "url":"https://www.facebook.com/l.php?u=tel%3A5555555555&h=sAQHTr9Ou"
+            },
+            {
+              "type":"web_url",
+              "title": "Map",
+              "url":"https://goo.gl/IJEilT"
+            }
+          ]
+        }
+      }
+    }
+  }
   // {
   //   "attachment": {
   //     "type": "template",

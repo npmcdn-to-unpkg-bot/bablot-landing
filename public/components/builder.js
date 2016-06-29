@@ -1,10 +1,10 @@
 var builder = new Vue({
   el: '#builder',
   template: `
-    <div v-if="!currentUser">
+    <div v-if="currentUser">
       <login-page v-on:login-success="loginSuccess"></login-page>
     </div>
-    <div v-else>
+    <div>
       <h5> Questions | Answers </h5>
       <h5> {{ faqs.length }} / 15 </h5>
       <div v-for="faq in faqs">
@@ -28,21 +28,22 @@ var builder = new Vue({
   `,
   data: {
     devMode: true,
-    faqs: [],
+    // faqs: [],
+    faqs: window.dummyData,
     currentUser: firebase.auth().currentUser
   },
   methods: {
     loginSuccess: function(user) {
-      this.currentUser = user;
-      return firebase.database().ref(`users/${user.displayName}@${user.uid}`).once('value')
-        .then((showcase)=> {
-          if (showcase.val()) {
-            let faqs = showcase.val();
-            for (var key in faqs) {
-              this.faqs.push(faqs[key]);
-            }
-          }
-        });
+      // this.currentUser = user;
+      // return firebase.database().ref(`users/${user.displayName}@${user.uid}`).once('value')
+      //   .then((showcase)=> {
+      //     if (showcase.val()) {
+      //       let faqs = showcase.val();
+      //       for (var key in faqs) {
+      //         this.faqs.push(faqs[key]);
+      //       }
+      //     }
+      //   });
     },
     addRow: function () {
       let rand = Math.floor(Math.random() * 36);

@@ -1,0 +1,49 @@
+.bablot-messenger-button {
+  display: block;
+  boder-radius: 20px;
+  background: #f1f0f0;
+  border-radius: 10px;
+  max-width: 300px;
+  min-width: 100px;
+  text-align: left;
+  display: inline-block;
+  margin: auto;
+  border: none;
+  font-size: 16px;
+}
+
+.bablot-messenger-button .text {
+  padding: 20px;
+}
+
+.bablot-messenger-button .fb-btn {
+  border: solid 1px #f1f0f0;
+  background: white;
+  width: 100%;
+  font-size: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.bablot-messenger-button .details {
+  display: flex;
+  flex-direction: row;
+}
+
+.bablot-messenger-button .link {
+  height: 100%;
+  margin-right: 0px;
+  border-right: 0px;
+  width: 90%;
+}
+
+.bablot-messenger-button .delete {
+  background: red;
+  width: 10%;
+}
+
+.bablot-messenger-menu button {
+  background: none;
+  border: none;
+  margin-bottom: 10px;
+}
