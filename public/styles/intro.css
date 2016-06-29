@@ -1,6 +1,11 @@
 .bablot-intro img {
   transition: opacity 0.2s;
 }
+
+.bablot-intro img {
+  margin-bottom: 20px;
+}
+
 .bablot-intro .bablot-intro--mesage {
   font-size: 20px;
   margin-bottom: 25px;
