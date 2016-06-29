@@ -22,7 +22,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.get('.well-known/acme-challenge/OkKRWTArdlkrbJvAIjEbq0ul4_Nk2QJKJ6Edmag', (req, res) => {
+
+app.get('/.well-known/acme-challenge/OkKRWTArdlkrbJvAIjEbq0ul4_Nk2QJKJ6Edmag', (req, res) => {
+  res.send('OkKRWTArdlkrbJvAIjEbq0ul4_Nk2QJKJ6Edmagj_o4.IP9Vd2bUb-AMw7Qn_4DEG9uIoKo_3ggtrZA1iJwDH7g');
+});
+
+app.get('/test', (req, res) => {
   res.send('OkKRWTArdlkrbJvAIjEbq0ul4_Nk2QJKJ6Edmagj_o4.IP9Vd2bUb-AMw7Qn_4DEG9uIoKo_3ggtrZA1iJwDH7g');
 });
 
