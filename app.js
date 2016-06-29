@@ -28,7 +28,7 @@ app.use('/', routes);
 // });
 
 
-app.get('/.well-known/lemmons/acme-challenge/SKj9QluoFIHsiR_fuYonzJQ4D2mb-SjYGjq5ay7qOXU', (req, res) => {
+app.get('/.well-known/acme-challenge/SKj9QluoFIHsiR_fuYonzJQ4D2mb-SjYGjq5ay7qOXU', (req, res) => {
   res.send('SKj9QluoFIHsiR_fuYonzJQ4D2mb-SjYGjq5ay7qOXU.IP9Vd2bUb-AMw7Qn_4DEG9uIoKo_3ggtrZA1iJwDH7g');
 });
 
