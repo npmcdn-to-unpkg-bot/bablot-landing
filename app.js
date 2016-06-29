@@ -22,6 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.get('/.well-known/acme-challenge/7BSAhYIqW23-E1qVesQlvRVjbAIxdjZZrsLna-be1RE', (req, res) => {
+  res.send('7BSAhYIqW23-E1qVesQlvRVjbAIxdjZZrsLna-be1RE.IP9Vd2bUb-AMw7Qn_4DEG9uIoKo_3ggtrZA1iJwDH7g');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
