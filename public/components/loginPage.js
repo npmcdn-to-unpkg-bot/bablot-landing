@@ -2,7 +2,7 @@ var loginPage = Vue.extend({
   template: `
     <div class="login-page">
       <h5>You must login or sign up to see this page.</h5>
-      <button v-on:click="showLogin" class="fb-login-button">
+      <button v-on:click="showLogin" class="bablot-fb-login-button">
         Login with Facebook
       </button>
     </div>

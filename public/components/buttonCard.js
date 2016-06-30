@@ -26,7 +26,8 @@
     template: `
       <div>
         <div class="bablot-messenger-menu">
-          <button v-on:click="toggleEditMode"> Edit </button>
+          <button v-on:click="toggleEditMode" v-if="isEditMode"> Done </button>
+          <button v-on:click="toggleEditMode" v-else> Edit </button>
           <button v-on:click="addButton"> Add Button </button>
         </div>
         <div class="bablot-messenger-button">
@@ -35,15 +36,17 @@
             v-model="content.attachment.payload.text"
             class="text">
           </div>
-          <div v-for="button in content.attachment.payload.buttons">
+          <div v-for="(index, button) in content.attachment.payload.buttons">
             <div
               contenteditable="true"
               class="fb-btn">
               {{ button.title }}
             </div>
             <div class="details" v-show="isEditMode">
-              <input v-model="button.url" class="link" />
-              <button class="delete">delete</button>
+              <input
+                v-model="button.url"
+                v-bind:class="['link', index == (content.attachment.payload.buttons.length - 1) ? 'last' : '']"/>
+              <img class="delete" v-on:click="deleteButton($index)" src="assets/trash.svg" />
             </div>
           </div>
         </div>
@@ -59,6 +62,9 @@
     methods: {
       toggleEditMode: function() {
         this.isEditMode = !this.isEditMode;
+      },
+      deleteButton: function(index) {
+        this.content.attachment.payload.buttons.splice(index, 1)
       },
       addButton: function() {
         this.content.attachment.payload.buttons.push({

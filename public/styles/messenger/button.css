@@ -34,12 +34,24 @@
   height: 100%;
   margin-right: 0px;
   border-right: 0px;
+  margin-left: 1px;
+  border: none;
   width: 90%;
+  height: 30px;
+}
+
+.bablot-messenger-button .last {
+  margin-bottom: 1px;
+  border-bottom-left-radius: 10px;
 }
 
 .bablot-messenger-button .delete {
-  background: red;
+  cursor: pointer;
+}
+
+.bablot-messenger-button .delete {
   width: 10%;
+  height: 30px;
 }
 
 .bablot-messenger-menu button {
