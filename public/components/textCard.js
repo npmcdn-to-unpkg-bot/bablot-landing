@@ -12,8 +12,8 @@
     template: `
       <div
         contenteditable="true"
-        @keyup='proofRead'
-        @keydown='proofRead'
+        @keyup='updateText'
+        @keydown='updateText'
         v-model="content.text"
         class="bablot-messenger-text">
       </div>
@@ -22,7 +22,7 @@
       this.$el.innerText = this.content.text;
     },
     methods: {
-      proofRead: function(e) {
+      updateText: function(e) {
         let textToSet = e.target.innerText;
         this.$set('content.text', textToSet);
       }

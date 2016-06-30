@@ -32,12 +32,16 @@
         </div>
         <div class="bablot-messenger-button">
           <div
+            @keyup='updateText'
+            @keydown='updateText'
             contenteditable="true"
             v-model="content.attachment.payload.text"
             class="text">
           </div>
           <div v-for="(index, button) in content.attachment.payload.buttons">
             <div
+              @keyup='updateText($event, button)'
+              @keydown='updateText($event, button)'
               contenteditable="true"
               class="fb-btn">
               {{ button.title }}
@@ -60,6 +64,14 @@
       return { isEditMode: false };
     },
     methods: {
+      updateText: function(e, button) {
+        let textToSet = e.target.innerText;
+        if (button) {
+          button.title = textToSet;
+        } else {
+          this.$set('content.attachment.payload.text', textToSet);
+        }
+      },
       toggleEditMode: function() {
         this.isEditMode = !this.isEditMode;
       },
