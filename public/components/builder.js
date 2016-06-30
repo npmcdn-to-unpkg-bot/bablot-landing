@@ -28,7 +28,8 @@ var builder = new Vue({
   `,
   data: {
     devMode: true,
-    faqs: [],
+    // faqs: [],
+    faqs: window.dummyData,
     currentUser: firebase.auth().currentUser
   },
   methods: {

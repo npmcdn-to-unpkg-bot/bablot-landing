@@ -1,7 +1,7 @@
 var BuilderRow = Vue.extend({
-  props: ['rowId', 'faq'],
+  props: ['faq'],
   template: `
-  <div id="builder_row_{{rowId}}" class="builder-row">
+  <div class="builder-row">
       <div class="builder-row-col-left">
         <textarea
           class="questionInput"
@@ -17,7 +17,7 @@ var BuilderRow = Vue.extend({
         <button v-on:click="delete" class="delete-button">delete</button>
       </div>
       <div class="builder-row-col-right">
-        <div id="card_{{rowId}}" class="card">
+        <div class="card">
 
           <text-card
             v-ref:text
@@ -31,17 +31,18 @@ var BuilderRow = Vue.extend({
             :content.sync="responses.image" >
           </image-card>
 
+          <button-card
+            v-ref:button
+            v-if="templateType == 'button'"
+            :content.sync="responses.button" >
+          </button-card>
+
         </div>
       </div>
 
   </div>`,
   data: function() {
-    return {
-      responses: {
-        text: { text: `Humbly bumbly, where's my jam?!` },
-        image: { attachment: { payload: { url: 'assets/king3.svg' } } }
-      }
-    }
+    return { responses: {} }
   },
   created: function() {
     this.$set(`responses.${this.faq.type}`, this.faq.answer);
