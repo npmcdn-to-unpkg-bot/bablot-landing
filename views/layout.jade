@@ -9,6 +9,7 @@ html
       ga('create', 'UA-77755296-1', 'auto');
       ga('send', 'pageview');
     script(async='', src='https://www.google-analytics.com/analytics.js')
+    link(rel='stylesheet', href='/styles/lib/bootstrap.min.css')
     link(rel='stylesheet', href='/styles/about.css')
     link(rel='stylesheet', href='/styles/about.css')
     link(rel='stylesheet', href='/styles/animations.css')
@@ -18,6 +19,7 @@ html
     link(rel='stylesheet', href='/styles/footer.css')
     link(rel='stylesheet', href='/styles/header.css')
     link(rel='stylesheet', href='/styles/intro.css')
+    link(rel='stylesheet', href='/styles/videos.css')
     link(rel='stylesheet', href='/styles/layout.css')
     link(rel='stylesheet', href='/styles/faq.css')
     link(rel='stylesheet', href='/styles/login.css')
@@ -26,7 +28,5 @@ html
     link(rel='stylesheet', href='/styles/messenger/image.css')
     link(rel='stylesheet', href='/styles/messenger/button.css')
   body
-    script.
-      window.fbAsyncInit = function() { FB.init({ appId : '1678638095724206', xfbml : true, version : 'v2.6' }); }; (function(d, s, id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = '//connect.facebook.net/en_US/sdk.js'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
     block content
     script(src='services/go.js')

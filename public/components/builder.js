@@ -1,10 +1,10 @@
 var builder = new Vue({
   el: '#builder',
   template: `
-    <div v-if="currentUser">
+    <div v-if="!currentUser">
       <login-page v-on:login-success="loginSuccess"></login-page>
     </div>
-    <div>
+    <div v-else>
       <h5> Questions | Answers </h5>
       <h5> {{ faqs.length }} / 15 </h5>
       <div v-for="faq in faqs">

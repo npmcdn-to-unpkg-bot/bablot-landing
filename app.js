@@ -23,15 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-// app.get('/.well-known/acme-challenge/OkKRWTArdlkrbJvAIjEbq0ul4_Nk2QJKJ6Edmag', (req, res) => {
-//   res.send('OkKRWTArdlkrbJvAIjEbq0ul4_Nk2QJKJ6Edmagj_o4.IP9Vd2bUb-AMw7Qn_4DEG9uIoKo_3ggtrZA1iJwDH7g');
-// });
-
-
-app.get('/.well-known/acme-challenge/SKj9QluoFIHsiR_fuYonzJQ4D2mb-SjYGjq5ay7qOXU', (req, res) => {
-  res.send('SKj9QluoFIHsiR_fuYonzJQ4D2mb-SjYGjq5ay7qOXU.IP9Vd2bUb-AMw7Qn_4DEG9uIoKo_3ggtrZA1iJwDH7g');
-});
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

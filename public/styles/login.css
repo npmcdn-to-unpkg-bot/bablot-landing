@@ -6,3 +6,11 @@
   color: white;
 }
 
+.bablot-google-login-button {
+  background: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  border: solid 1px grey;
+}
+
