@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  body
+    header
+      include ./nav.jade
+    .bablot-intro
+      img(src='assets/crown.svg')
+      .bablot-intro--mesage Instant responses, crazy smart bots.
+    .bablot-wrapper
+      .bablot-chat-panel
+        img(src="assets/demo.gif" width="290px")
+      .bablot-contact-panel
+        .bablot-contact
+          .bablot-contact--header We don't bite
+          .bablot-contact--phone
+            img(src='assets/phone.svg')
+            a(href='tel:226-378-8121') 226 378 8121
+          .bablot-contact--email
+            img(src='assets/email.svg')
+            a(href='mailto:yourfriends@bablot.co?Subject=Hello!') yourfriends@bablot.co

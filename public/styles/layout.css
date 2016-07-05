@@ -3,14 +3,16 @@
   margin: auto;
   width: 1000px;
   height: 415px;
-  position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 .bablot-chat-panel {
-  position: absolute;
-  left: calc(500px - 250px);
   width: 500px;
   height: 415px;
+}
+.bablot-chat-panel.center {
+  margin: auto;
 }
 
 .bablot-chat-panel img {
@@ -20,10 +22,6 @@
 .bablot-about-panel {
   width: 400px;
   height: 400px;
-  position: absolute;
-  left: calc(500px + 100px);
-  transition: opacity 1s;
-  opacity: 0;
 }
 
 .bablot-contact-panel {
@@ -32,7 +30,6 @@
   position: absolute;
   left: calc(500px + 100px);
   transition: opacity 1s;
-  opacity: 0;
 }
 
 .bablot-video-layout {
