@@ -9,4 +9,18 @@
 .bablot-about .bablot-about--message {
   font-size: 20px;
   text-align: left;
+  margin-bottom: 20px;
+}
+
+.bablot-about .signup-button {
+  background: #FD3324;
+  color: white;
+  font-size: 20px;
+  border: none;
+  margin: auto;
+  padding: 10px;
+}
+
+.bablot-about .signup-button:hover {
+  text-decoration: none;
 }
