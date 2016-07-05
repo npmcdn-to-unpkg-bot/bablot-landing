@@ -5,15 +5,7 @@ block content
     header
       include ./nav.jade
       .container
-        .col-sm-6.col-xs-12
-          .video
-            h5 Getting Started
-            iframe(src="https://www.youtube.com/embed/fTwqHszSq3U" frameborder="0" allowfullscreen)
-        .col-sm-6.col-xs-12
-          .video
-              h5 FAQ
-              iframe(src="https://www.youtube.com/embed/fTwqHszSq3U" frameborder="0" allowfullscreen)
-        .col-sm-6.col-xs-12
-          .video
-              h5 Live Data
-              iframe(src="https://www.youtube.com/embed/fTwqHszSq3U" frameborder="0" allowfullscreen)
+        .col-sm-6.col-xs-12.col-sm-offset-3.bablot-video-layout
+          .videoWrapper
+            iframe(width="560" height="349" src="https://www.youtube.com/embed/fTwqHszSq3U" frameborder="0" allowfullscreen)
+          h5 Getting Started
