@@ -1,0 +1,79 @@
+.pricing-table {
+  margin: 100px auto;
+  text-align: center;
+  width: 892px;
+}
+
+.pricing-table .plan {
+  width: 180px;
+  float: left;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden!important;
+}
+
+.plan-wrapper {
+  position:relative;
+}
+
+.plan-wrapper .feature {
+  font-weight: lighter;
+}
+
+.plan-wrapper .bonus {
+  font-weight: bold;
+  color: #0084FF;
+}
+
+.plan-wrapper .top {
+  overflow: hidden;
+  width: 100%;
+  background-color: #FCE439;
+  color: #4C4D63;
+}
+
+.plan-wrapper .bottom {
+  width: 100%;
+  margin-top: -15px;
+  border: solid 1px #F1F1F1;
+}
+
+.plan-wrapper .bottom .info {
+  margin-top: 60px;
+}
+
+.plan-wrapper .city {
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+}
+
+.plan-wrapper .logo {
+    width:50%;
+    position:absolute;
+    top: 80px;
+    left:30%;
+}
+
+.plan-wrapper .bable-bar {
+  height: 2px;
+  color: #4C4D63;
+  background: #4C4D63;
+  font-size: 0;
+  border: 0;
+  border-radius: 5px;
+  width: 25px;
+  margin-bottom: 40px;
+  margin-top: 0px;
+}
+
+.plan-wrapper .bable-bar.muted {
+  color: #F1F1F1!important;
+}
+
+.pricing-table .most-popular {
+  z-index: 2;
+  top: -13px;
+  margin-bottom: 30px;
+  box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+}

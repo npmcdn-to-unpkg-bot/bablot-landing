@@ -21,4 +21,8 @@ router.get('/builder', function(req, res, next) {
   res.render('builder');
 });
 
+router.get('/payments', function(req, res, next) {
+  res.render('payments');
+});
+
 module.exports = router;

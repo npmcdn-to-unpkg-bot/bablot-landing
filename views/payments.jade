@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  body
+    header
+      include ./nav.jade
+      .container
+        .col-md-6.col-md-offset-3
+          .pricing-table
+            .plan
+              .plan-wrapper
+                .top
+                  h3 Starter
+                  hr.bable-bar
+                  img.city(src="assets/cityscape_yellow.svg")
+                .bottom
+                  img.logo(src="assets/wiseking.png")
+                  .info
+                    p.feature FAQ Virtual Assistant
+                    p.feature Unlimited Messages
+                    p.bonus +1 Bonus Feature*
+                    hr.bable-bar.muted
+            .plan.most-popular
+              .plan-wrapper
+                .top
+                  h3 Business
+                  hr.bable-bar
+                  img.city(src="assets/cityscape_yellow.svg")
+                .bottom
+                  img.logo(src="assets/wiseking.png")
+                  .info
+                    p.feature FAQ Virtual Assistant
+                    p.feature Unlimited Messages
+                    p.bonus +1 Bonus Feature*
+                    hr.bable-bar.muted
+            .plan
+              .plan-wrapper
+                .top
+                  h3 Premium
+                  hr.bable-bar
+                  img.city(src="assets/cityscape_yellow.svg")
+                .bottom
+                  img.logo(src="assets/wiseking.png")
+                  .info
+                    p.feature FAQ Virtual Assistant
+                    p.feature Unlimited Messages
+                    p.bonus +1 Bonus Feature*
+                    hr.bable-bar.muted
