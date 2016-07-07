@@ -1,15 +1,22 @@
 .pricing-table {
-  margin: 100px auto;
+  display: inline-block;
   text-align: center;
-  width: 892px;
 }
 
 .pricing-table .plan {
-  width: 180px;
+  width: 250px;
   float: left;
   position: relative;
   border-radius: 5px;
   overflow: hidden!important;
+}
+
+.pricing-table .most-popular {
+  width: 290px;
+  z-index: 2;
+  top: -13px;
+  margin-bottom: 30px;
+  box-shadow: 5px 0 10px 0px rgba(0, 0, 0, .15), -5px 0 10px 0px rgba(0, 0, 0, .15);
 }
 
 .plan-wrapper {
@@ -28,13 +35,12 @@
 .plan-wrapper .top {
   overflow: hidden;
   width: 100%;
-  background-color: #FCE439;
   color: #4C4D63;
 }
 
 .plan-wrapper .bottom {
   width: 100%;
-  margin-top: -15px;
+  margin-top: -5px;
   border: solid 1px #F1F1F1;
 }
 
@@ -49,10 +55,14 @@
 }
 
 .plan-wrapper .logo {
-    width:50%;
-    position:absolute;
-    top: 80px;
-    left:30%;
+  position:absolute;
+  width: 40%;
+  top: 80px;
+  left:30%;
+}
+
+.plan-wrapper .logo.premium {
+    width: 50%;
 }
 
 .plan-wrapper .bable-bar {
@@ -68,12 +78,30 @@
 }
 
 .plan-wrapper .bable-bar.muted {
-  color: #F1F1F1!important;
+  background: #DDDDDD;
+  width: 35px;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
-.pricing-table .most-popular {
-  z-index: 2;
-  top: -13px;
+.plan-wrapper .pricing-btn {
+  padding: 5px 25px 5px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 40px;
+  border: none;
+  font-size: 24px;
   margin-bottom: 30px;
-  box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
 }
+
+.plan-wrapper .top.starter { background-color: #96E7FC; }
+.plan-wrapper .top.business { background-color: #FF9087; }
+.plan-wrapper .top.premium { background-color: #FCE439; }
+
+.plan-wrapper .pricing-btn.starter { background: #31DAFD; }
+.plan-wrapper .pricing-btn.business { background: #FD6357; }
+.plan-wrapper .pricing-btn.premium { background: #F6D232; }
+
+.plan-wrapper .pricing-btn.starter:hover { background: #96E7FC; }
+.plan-wrapper .pricing-btn.business:hover { background: #FF9087; }
+.plan-wrapper .pricing-btn.premium:hover { background: #FCE439; }
