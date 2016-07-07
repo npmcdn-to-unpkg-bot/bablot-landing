@@ -27,9 +27,6 @@
 .bablot-contact-panel {
   width: 400px;
   height: 400px;
-  position: absolute;
-  left: calc(500px + 100px);
-  transition: opacity 1s;
 }
 
 .bablot-video-layout {
