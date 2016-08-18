@@ -1,0 +1,30 @@
+.bablot-footer {
+  background: #31DCFF;
+  height: 30px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: none;
+}
+
+.bablot-footer::after {
+  content: '';
+  background: #31DCFF;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 17px);
+  transform: rotate(45deg);
+  border-radius: 6px;
+}
+
+.bablot-footer button {
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
